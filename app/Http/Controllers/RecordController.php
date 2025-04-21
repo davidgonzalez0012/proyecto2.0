@@ -8,7 +8,7 @@ class RecordController extends Controller
 {
 
     public function mostrarFormularioRegistro(){
-        
+        return view('registrousuario');
     }
 
 public function registrar(Request $request)

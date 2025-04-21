@@ -334,7 +334,7 @@
                                         data-bs-target="#recuperarModal">¿Olvidaste tu contraseña?</a>
 
                                     <p class="mb-5 pb-lg-2">¿No tienes una cuenta?
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#registroModal">¡Regístrate
+                                        <a href="/resources/views/registrousuario.balde.php" data-bs-toggle="modal" data-bs-target="#registroModal">¡Regístrate
                                             aquí!</a>
                                     </p>
 
@@ -353,7 +353,7 @@
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form id="formRegistro" action="{{ route('registro') }}" method="POST">
+                                                    <form id="formRegistro" action="{{ route('registrousuario') }}" method="POST">
                                                         @csrf
                                                         <div class="mb-3">
                                                             <label for="registroTipoUsuario" class="form-label">Tipo de
@@ -391,14 +391,14 @@
                                                                 id="registroConfirmPassword" name="password_confirmation"
                                                                 required>
                                                         </div> --}}
-                                                        {{-- <div class="form-check mb-3">
+                                                         <div class="form-check mb-3">
                                                             <input class="form-check-input" type="checkbox"
                                                                 id="terminos" required>
                                                             <label class="form-check-label" for="terminos">
                                                                 Acepto los <a href="#" class="text-primary">términos
                                                                     y condiciones</a>
                                                             </label>
-                                                        </div> --}}
+                                                        </div> 
                                                         <div class="d-grid">
                                                             <button type="submit"
                                                                 class="btn btn-primary">Registrarme</button>
@@ -411,7 +411,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> 
 
                                     <!-- Modal de Recuperación -->
                                     <div class="modal fade" id="recuperarModal" tabindex="-1"

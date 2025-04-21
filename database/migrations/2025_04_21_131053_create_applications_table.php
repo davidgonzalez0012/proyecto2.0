@@ -6,24 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+  
     public function up(): void
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('trabajador_id')->constrained('employers')->onDelete('cascade');
             $table->foreignId('oferta_id')->constrained('offers')->onDelete('cascade');
+
+
             $table->enum('estado', ['pendiente', 'aceptado', 'rechazado'])->default('pendiente');
 
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('applications');
