@@ -8,7 +8,7 @@ class RecordController extends Controller
 {
 
     public function mostrarFormularioRegistro(){
-        
+
     }
 
 public function registrar(Request $request)

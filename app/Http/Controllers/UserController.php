@@ -8,15 +8,13 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
- 
+
     public function store (Request $request){
         $Usuario = new User();
+        $Usuario -> rol = $request-> rol;
         $Usuario -> nombre = $request-> nombre;
         $Usuario -> email = $request-> email;
         $Usuario -> contraseña = $request-> contraseña;
-        $Usuario -> rol = $request-> rol;
-        $Usuario -> telefono = $request-> telefono;
-        $Usuario -> direccion = $request-> direccion;
         $Usuario ->save();
 
         return $Usuario;
