@@ -1,0 +1,198 @@
+/* Fondo principal de la sección de login */
+.login-section {
+    height: 100vh;
+    background: linear-gradient(135deg, #2e1c1f, #3b2629);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tarjeta principal del login */
+.login-card {
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+
+/* Lado izquierdo con imagen y texto */
+.login-img-container {
+    background: #1a0f10;
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.login-img {
+    border-radius: 1rem;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.login-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1rem 0 0.5rem;
+    text-align: center;
+    color: #ffddc1;
+}
+
+.login-text {
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+    color: #e0dede;
+    padding: 0 1rem;
+}
+
+/* Lado derecho: formulario */
+.card-body {
+    padding: 3rem;
+}
+
+.logo-icon {
+    color: #ff6219;
+}
+
+.section-title {
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #d2dde9;
+    padding: 0.75rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #ff6219;
+    box-shadow: 0 0 0 0.2rem rgba(255, 98, 25, 0.25);
+}
+
+/* Botón principal */
+.btn-dark {
+    background-color: #ff6219;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-dark:hover {
+    background-color: #e05a17;
+}
+
+/* Links */
+a.text-muted,
+a.text-muted:hover {
+    font-size: 0.9rem;
+    color: #666 !important;
+}
+
+.login-register-text {
+    font-size: 0.9rem;
+    color: #393f81;
+    margin-top: 1.5rem;
+}
+
+.login-register-text a {
+    color: #3d56d6;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-register-text a:hover {
+    text-decoration: underline;
+}
+
+/* Modal mejoras */
+.modal-content {
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+/* Estilo glass para modales */
+.glass-modal {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+    color: #f2f2f2;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Input y select con estilo moderno */
+  .glass-modal .form-control,
+  .glass-modal .form-select {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #f7ebeb;
+    border-radius: 0.6rem;
+    padding: 0.7rem 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .glass-modal .form-control:focus,
+  .glass-modal .form-select:focus {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(255, 98, 25, 0.4);
+    color: #0c0b0b;
+  }
+  
+  /* Texto y botón */
+  .glass-modal .form-label {
+    color: #ffddb0;
+    font-weight: 500;
+  }
+  
+  .glass-modal .btn-primary {
+    background-color: #ff6219;
+    border: none;
+    padding: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.6rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .glass-modal .btn-primary:hover {
+    background-color: #e05618;
+  }
+  
+  .glass-modal .btn-secondary {
+    border-radius: 0.6rem;
+  }
+  
+  /* Enlaces */
+  .glass-modal a {
+    color: #f8c48d;
+    text-decoration: none;
+  }
+  
+  .glass-modal a:hover {
+    text-decoration: underline;
+    color: #ffcba4;
+  }
