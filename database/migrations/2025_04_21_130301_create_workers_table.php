@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('workers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
+            $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
             $table->text('habilidades')->nullable();
             $table->text('experiencia')->nullable();
             $table->decimal('calificacion', 3, 2)->default(0);
-    
+
             $table->timestamps();
         });
     }

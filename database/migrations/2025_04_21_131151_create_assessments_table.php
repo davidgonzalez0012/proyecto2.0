@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('assessments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('trabajador_id')->nullable()->constrained('trabajadores')->onDelete('cascade');
-            $table->foreignId('empleador_id')->nullable()->constrained('empleadores')->onDelete('cascade');
+            $table->foreignId('trabajador_id')->nullable()->constrained('workers')->onDelete('cascade');
+            $table->foreignId('empleador_id')->nullable()->constrained('employers')->onDelete('cascade');
             $table->integer('calificacion')->default(5);
             $table->text('comentario')->nullable();
-    
+
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('employers', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
+            $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
             $table->string('empresa');
             $table->text('descripcion')->nullable();
             $table->integer('reputacion')->default(0);

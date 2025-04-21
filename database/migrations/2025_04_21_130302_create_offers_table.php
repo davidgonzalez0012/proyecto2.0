@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('empleador_id')->constrained('empleadores')->onDelete('cascade');
+            $table->foreignId('empleador_id')->constrained('employers')->onDelete('cascade');
             $table->string('titulo');
             $table->string('categoria');
             $table->string('contrato');

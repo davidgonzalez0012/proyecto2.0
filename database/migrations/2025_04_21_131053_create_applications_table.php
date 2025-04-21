@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('trabajador_id')->constrained('trabajadores')->onDelete('cascade');
-            $table->foreignId('oferta_id')->constrained('ofertas')->onDelete('cascade');
+            $table->foreignId('trabajador_id')->constrained('employers')->onDelete('cascade');
+            $table->foreignId('oferta_id')->constrained('offers')->onDelete('cascade');
             $table->enum('estado', ['pendiente', 'aceptado', 'rechazado'])->default('pendiente');
-    
+
             $table->timestamps();
         });
     }
