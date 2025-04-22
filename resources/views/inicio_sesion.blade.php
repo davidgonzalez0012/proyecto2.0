@@ -76,7 +76,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                           
+
 
                                 <div class="mb-3">
                                     <label class="form-label">Tipo de Usuario</label>
@@ -97,9 +97,9 @@
                                 <div class="mb-3">
                                     <label class="form-label">Contraseña</label>
                                     <input type="password" class="form-control" required>
-                                
+
                                 <button type="submit" class="btn btn-primary w-100">Registrarse</button>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
     </div>
 
 
-    
+
 @endsection
  --}}
 
@@ -179,7 +179,7 @@
                                      <div class="mb-3 form-check">
                                         <input type="checkbox" class="form-check-input" id="recordarme">
                                         <label class="form-check-label" for="recordarme">Recordarme</label>
-                                    </div> 
+                                    </div>
                                     <div class="d-grid">
                                         <button type="submit" class="boton_publicacion">Iniciar Sesión</button>
                                     </div>
@@ -268,7 +268,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
  --}}
 
 
@@ -294,7 +294,8 @@
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
-                                    <form>
+                                    <form d="loginform" action="{{ route('prueba') }}" method="post">
+                                        @csrf
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <i class="fas fa-cubes fa-2x me-3 icono-login"></i>
                                             <span class="h1 fw-bold mb-0">JOBS & JOBS</span>
@@ -326,7 +327,7 @@
                                         </div>
 
                                         <div class="pt-1 mb-4">
-                                            <button class="btn btn-dark btn-lg btn-block" type="button">Ingresar</button>
+                                            <button class="btn btn-dark btn-lg btn-block" type="submit">Ingresar</button>
                                         </div>
                                     </form>
 
@@ -384,7 +385,7 @@
                                                             <input type="password" class="form-control"
                                                                 id="registroPassword" name="password" required>
                                                         </div>
-                                                       
+
                                                         <div class="d-grid">
                                                             <button type="submit"
                                                                 class="btn btn-primary">Registrarme</button>
@@ -397,7 +398,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
 
                                     <!-- Modal de Recuperación -->
                                     <div class="modal fade" id="recuperarModal" tabindex="-1"
@@ -447,5 +448,5 @@
 
 
 
-   
+
 @endsection

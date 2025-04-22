@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Psy\TabCompletion\Matcher\FunctionsMatcher;
 
 class LoginController extends Controller
 {
 
+    public Function vista(){
+        return view('sesion_iniciada');
+    }
 
     public function mostrarFormularioLogin()
     {
