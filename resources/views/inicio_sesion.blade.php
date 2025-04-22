@@ -384,21 +384,7 @@
                                                             <input type="password" class="form-control"
                                                                 id="registroPassword" name="password" required>
                                                         </div>
-                                                        {{-- <div class="mb-3">
-                                                            <label for="registroConfirmPassword"
-                                                                class="form-label">Confirmar Contraseña</label>
-                                                            <input type="password" class="form-control"
-                                                                id="registroConfirmPassword" name="password_confirmation"
-                                                                required>
-                                                        </div> --}}
-                                                         {{-- <div class="form-check mb-3">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="terminos" required>
-                                                            <label class="form-check-label" for="terminos">
-                                                                Acepto los <a href="#" class="text-primary">términos
-                                                                    y condiciones</a>
-                                                            </label>
-                                                        </div>  --}}
+                                                       
                                                         <div class="d-grid">
                                                             <button type="submit"
                                                                 class="btn btn-primary">Registrarme</button>

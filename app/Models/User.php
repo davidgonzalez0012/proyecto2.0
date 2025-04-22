@@ -48,9 +48,9 @@ class User extends Authenticatable
 
     use HasFactory;
 
-    protected $table = 'usuarios';
+    protected $table = 'Users';
 
-    protected $fillable = ['nombre', 'email', 'contraseña', 'rol', 'telefono', 'direccion'];
+    protected $fillable = ['tipo_usuario' ,'nombre', 'email', 'contraseña' ];
 
     protected $hidden = ['contraseña'];
 
@@ -82,3 +82,5 @@ class User extends Authenticatable
 
 
 }
+
+

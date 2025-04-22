@@ -1,6 +1,10 @@
 <?php
 
+
+
+
 namespace App\Http\Controllers;
+use App\Http\Controllers\Auth\RegistroController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,13 +22,6 @@ Route::get('/registro', [RecordController::class, 'mostrarFormularioRegistro'])-
 Route::get('/recuperar', [RecoverPasswordController::class, 'recuperar_contrasena'])->name('recuperacion');
 
 
-//ingreso de datos formularios
-//inicio de sesion
-Route::post('/login2', [LoginController::class, 'iniciarSesion']);
-Route::post('/cerrar-sesion', [LoginController::class, 'cerrarSesion'])->name('logout');
-
-//registro de usuario
-
-Route::post('/registro', [RecordController::class, 'registrar']);
 
 
+Route::post('/registro', [RecordController::class, 'registrar'])->name('registro');
