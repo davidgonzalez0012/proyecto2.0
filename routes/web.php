@@ -23,5 +23,5 @@ Route::get('/recuperar', [RecoverPasswordController::class, 'recuperar_contrasen
 
 
 
-
 Route::post('/registro', [RecordController::class, 'registrar'])->name('registro');
+
