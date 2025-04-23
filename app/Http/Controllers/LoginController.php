@@ -23,11 +23,14 @@ class LoginController extends Controller
     {
         $request->validate([
             'tipo_usuario' => 'required',
+            'username' => 'required|string',
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
+        // Buscar el usuario con todas las condiciones
         $user = User::where('email', $request->email)
+                    ->where('username', $request->username)
                     ->where('tipo_usuario', $request->tipo_usuario)
                     ->first();
 
@@ -37,14 +40,13 @@ class LoginController extends Controller
 
             switch ($user->tipo_usuario) {
                 case 'Empleador':
-                    return redirect('sesion_iniciada');
-                    // return redirect()->intended('dashboard/empleador');
+                    return redirect()->route('empleador');
                 case 'Trabajador':
-                    return redirect()->intended('dashboard/trabajador');
+                    return redirect()->route('empleado');
                 case 'Administrador':
-                    return redirect()->intended('dashboard/admin');
+                    return redirect()->route('dashboard.admin');
                 default:
-                    return redirect()->intended('dashboard');
+                    return redirect()->route('dashboard');
             }
         }
 

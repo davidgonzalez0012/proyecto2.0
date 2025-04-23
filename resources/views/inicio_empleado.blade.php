@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <p>ya inicio sesion</p>
-
+    <p>inicio desde empelado</p>
 </body>
 </html>

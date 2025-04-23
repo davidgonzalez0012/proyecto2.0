@@ -294,7 +294,7 @@
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
-                                    <form d="loginform" action="{{ route('prueba') }}" method="post">
+                                    <form d="loginform" action="{{ route('iniciado') }}" method="post">
                                         @csrf
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <i class="fas fa-cubes fa-2x me-3 icono-login"></i>

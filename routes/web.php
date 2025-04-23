@@ -21,7 +21,11 @@ Route::get('/publicar_empleo', [OfferController::class, 'publicar']);
 Route::get('/registro', [RecordController::class, 'mostrarFormularioRegistro'])->name('registro');
 Route::get('/recuperar', [RecoverPasswordController::class, 'recuperar_contrasena'])->name('recuperacion');
 
+route::get('/inicio_empleador',[EmployerController::class, 'inicio_empleador'])->name('empleador');
+route::get('/inicio_empleado',[EmployerController::class,'inicio_empleado'])->name('empleado');
 
-route::post('/prueba', [LoginController::class, 'iniciarsesion'])->name('prueba');
+
+route::match(['get', 'post'], '/inicio', [LoginController::class, 'iniciarsesion'])->name('iniciado');
+
 Route::post('/registro', [RecordController::class, 'registrar'])->name('registro');
 Route::post('/login', [loginController::class, 'iniciarSesion'])->name('ingresar');
