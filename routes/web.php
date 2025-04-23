@@ -20,8 +20,8 @@ Route::get('/buscar_empleo', [ApplicationsController::class, 'buscar']);
 Route::get('/publicar_empleo', [OfferController::class, 'publicar']);
 Route::get('/registro', [RecordController::class, 'mostrarFormularioRegistro'])->name('registro');
 Route::get('/recuperar', [RecoverPasswordController::class, 'recuperar_contrasena'])->name('recuperacion');
-route::post('/prueba', [LoginController::class, 'vista'])->name('prueba');
 
 
+route::post('/prueba', [LoginController::class, 'iniciarsesion'])->name('prueba');
 Route::post('/registro', [RecordController::class, 'registrar'])->name('registro');
 Route::post('/login', [loginController::class, 'iniciarSesion'])->name('ingresar');

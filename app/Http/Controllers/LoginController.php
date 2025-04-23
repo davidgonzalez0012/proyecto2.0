@@ -1,17 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\User;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Psy\TabCompletion\Matcher\FunctionsMatcher;
 
 class LoginController extends Controller
 {
 
-    public Function vista(){
-        return view('sesion_iniciada');
-    }
 
     public function mostrarFormularioLogin()
     {
@@ -27,17 +27,18 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        $credentials = $request->only('email', 'password');
-        $credentials['tipo_usuario'] = $request->tipo_usuario;
+        $user = User::where('email', $request->email)
+                    ->where('tipo_usuario', $request->tipo_usuario)
+                    ->first();
 
-        // Intentar autenticar al usuario
-        if (Auth::attempt($credentials, $request->filled('remember'))) {
+        if ($user && Hash::check($request->password, $user->password)) {
+            Auth::login($user);
             $request->session()->regenerate();
 
-            // Redirección según el tipo de usuario
-            switch ($request->tipo_usuario) {
+            switch ($user->tipo_usuario) {
                 case 'Empleador':
-                    return redirect()->intended('dashboard/empleador');
+                    return redirect('sesion_iniciada');
+                    // return redirect()->intended('dashboard/empleador');
                 case 'Trabajador':
                     return redirect()->intended('dashboard/trabajador');
                 case 'Administrador':
