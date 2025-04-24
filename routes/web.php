@@ -22,7 +22,7 @@ Route::get('/registro', [RecordController::class, 'mostrarFormularioRegistro'])-
 Route::get('/recuperar', [RecoverPasswordController::class, 'recuperar_contrasena'])->name('recuperacion');
 
 route::get('/inicio_empleador',[EmployerController::class, 'inicio_empleador'])->name('empleador');
-route::get('/inicio_empleado',[EmployerController::class,'inicio_empleado'])->name('empleado');
+route::get('/inicio_empleado',[WorkerController::class,'inicio_empleado'])->name('empleado');
 
 
 route::match(['get', 'post'], '/inicio', [LoginController::class, 'iniciarsesion'])->name('iniciado');

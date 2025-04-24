@@ -11,7 +11,5 @@ class EmployerController extends Controller
         return view('inicio_empleador');
     }
 
-    public function inicio_empleado(){
-        return view('inicio_empleado');
-    }
+ 
 }
