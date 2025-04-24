@@ -19,7 +19,7 @@ class LoginController extends Controller
     }
 
 
-    public function iniciarSesion(Request $request)
+    public function login(Request $request)
     {
         $request->validate([
             'tipo_usuario' => 'required',
@@ -56,14 +56,14 @@ class LoginController extends Controller
     }
 
 
-public function cerrarSesion(Request $request)
+public function logout(Request $request)
 {
     Auth::logout();
 
     $request->session()->invalidate();
     $request->session()->regenerateToken();
 
-    return redirect('/');
+    return redirect(route('pagina_inicio'));
 }
 }
 

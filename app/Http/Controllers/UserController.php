@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -10,15 +12,18 @@ class UserController extends Controller
 
 
     public function store (Request $request){
+
+        //validar datos... pendiente
+
         $Usuario = new User();
-        $Usuario -> rol = $request-> rol;
+        $Usuario -> tipo_usuario = $request-> tipo_usuario;
         $Usuario -> nombre = $request-> nombre;
         $Usuario -> email = $request-> email;
-        $Usuario -> contraseña = $request-> contraseña;
+        $Usuario -> password = hash::make($request-> password);
 
         $Usuario ->save();
 
-        return $Usuario;
+
     }
 
     public function recuperar_contraseña(Request $request){
