@@ -50,9 +50,9 @@ class User extends Authenticatable
 
     protected $table = 'Users';
 
-    protected $fillable = ['tipo_usuario' ,'nombre', 'email', 'contraseña' ];
+    protected $fillable = ['tipo_usuario' ,'nombre', 'email', 'password' ];
 
-    protected $hidden = ['contraseña'];
+    protected $hidden = ['password'];
 
     public function empleador()
     {

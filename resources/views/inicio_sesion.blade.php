@@ -305,7 +305,7 @@
                                         <hr>
 
                                         <div class="mb-3">
-                                            <label for="tipoUsuario" class="form-label">Tipo de Usuario</label>
+                                            <label for="tipoUsuario" class="form-label" name ="tipo_usuario">Tipo de Usuario</label>
                                             <select class="form-select" id="tipoUsuario">
                                                 <option value="">Seleccione un tipo de usuario</option>
                                                 <option value="empleador">Empleador</option>
@@ -315,20 +315,14 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="contrasena" class="form-label">Usuario</label>
-                                            <input type="text" class="form-control" id="contrasena" required
+                                            <label for="nombre" class="form-label">Usuario</label>
+                                            <input type="text" class="form-control" id="nombre" name="nombre" required
                                                 placeholder="Ingrese su nombre de usuario">
                                         </div>
 
-                                        <div class="form-outline mb-4">
-                                            <label for="correoElectronico" class="form-label">Correo Electrónico</label>
-                                            <input type="email" class="form-control" id="correoElectronico" required
-                                                placeholder="ejemplo@dominio.com">
-                                        </div>
-
                                         <div class="mb-3">
-                                            <label for="contrasena" class="form-label">Contraseña</label>
-                                            <input type="password" class="form-control" id="contrasena" required
+                                            <label for="password" class="form-label">Contraseña</label>
+                                            <input type="password" class="form-control" id="password" name="password" required
                                                 placeholder="Ingrese su contraseña">
                                         </div>
 
