@@ -31,6 +31,8 @@ public function registrar(Request $request)
                 return redirect()->route('empleado');
             case 'empleador':
                 return redirect()->route('empleador');
+                default:
+                return redirect('/login');
         }
 
 }
