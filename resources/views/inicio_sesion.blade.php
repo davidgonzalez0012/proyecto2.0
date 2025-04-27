@@ -304,7 +304,7 @@
                                         <h5 class="fw-normal mb-3 pb-3 login-subtitle">inicio de sesión</h5>
                                         <hr>
 
-                                        <div class="mb-3">
+                                        {{-- <div class="mb-3">
                                             <label for="tipoUsuario" class="form-label" name ="tipo_usuario">Tipo de Usuario</label>
                                             <select class="form-select" id="tipoUsuario">
                                                 <option value="">Seleccione un tipo de usuario</option>
@@ -312,7 +312,7 @@
                                                 <option value="administrador">Administrador</option>
                                                 <option value="empleado">Empleado</option>
                                             </select>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="mb-3">
                                             <label for="nombre" class="form-label">Usuario</label>

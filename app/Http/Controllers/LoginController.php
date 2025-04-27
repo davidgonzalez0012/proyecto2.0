@@ -23,13 +23,13 @@ class LoginController extends Controller
         $credentials = [
         'nombre' => $request->nombre,
         'password' => $request->password,
-        'tipo_usuario' => $request->tipo_usuario,
         ];
-
 
         if (Auth::attempt($credentials)) {
 
-                switch ($request->tipo_usuario) {
+            $tipoUsuario = Auth::user()->tipo_usuario;
+
+                switch ($tipoUsuario) {
                     case 'empleado':
                         return redirect()->route('empleado');
                     case 'empleador':
