@@ -4,7 +4,11 @@
 
 
 @section('content')
-
+@if (session('error'))
+<div class="alert alert-danger">
+    {{ session('error') }}
+</div>
+@endif
 
     <section class="vh-100 login-section">
         <div class="container py-5 h-100">

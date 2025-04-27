@@ -41,7 +41,7 @@ class LoginController extends Controller
 
         }
         else {
-            return redirect(route('pagina_inicio'));
+            return redirect(route('login'))->with('error', 'Credenciales incorrectas. Por favor, intenta nuevamente.');
         }
     }
 
