@@ -1,12 +1,13 @@
-@extends('layout.app')
+@extends('layout.app_empleado')
 
 @section('content')
+
 
 <div class="tab-content">
     <div class="tab-pane active " id="s1">
         <br>
 
-        <h1>BIENVENIDO</h1>
+        <h1>BIENVENIDO A JOBS & JOBS</h1>
         <div class="logo-container">
             <img class="imagen03" src="{{ asset('imagenes/Captura de pantalla 2025-04-07 193104.png') }}"
                 alt="logo jobs">
@@ -42,7 +43,7 @@
             </div>
             <pre>
 
-
+               
 
             </pre>
             <div class="fila hidden">
@@ -166,5 +167,9 @@
             </div>
             </section>
         </div>
+
+
+
+
 
 @endsection

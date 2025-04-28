@@ -1,0 +1,39 @@
+body {
+    min-height: 100vh;
+    display: flex;
+}
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    min-height: 100vh;
+    position: fixed;
+}
+.content {
+    margin-left: 250px;
+    padding: 2rem;
+    width: 100%;
+}
+.sidebar .nav-link {
+    color: #333;
+    font-weight: 500;
+   
+}
+.sidebar .nav-link:hover {
+    background-color: #f8f9fa;
+    color: #000;
+    
+}
+.navbar {
+    margin-right: 400px;
+   
+}
+.admin_bienvenido {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ece6e6;
+}
+.admin_descripcion {
+    font-size: 2rem;
+    color: #ece6e6;
+}

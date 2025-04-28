@@ -1,15 +1,23 @@
 
-@extends('layout.app')
+@extends('layout.app_admin')
 
 
 @section('content')
 
-<p>holas desde admin</p>
 
 
-<button><a href="{{ route('logout') }}">Logout</a></button>
-</body>
-</html>
+<div class="container mt-4">
+
+    <div class="text-center">
+      
+        <div class="logo-container mb-4">
+            <img class="img-fluid" src="{{ asset('imagenes/Captura de pantalla 2025-04-07 193104.png') }}" alt="Logo Jobs">
+        </div>
+        
+    </div>
+
+    <hr>
+
 
 
 @endsection
