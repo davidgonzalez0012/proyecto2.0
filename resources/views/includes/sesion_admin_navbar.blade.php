@@ -3,13 +3,10 @@
 <nav class="sidebar d-flex flex-column p-3">
     <h4 class="mb-4 text-center">JOBS & JOBS<br>Admin</h4>
     <ul class="nav nav-pills flex-column mb-auto">
-        <li><a href="{{ url('/admin/dashboard') }}" class="nav-link">Dashboard</a></li>
         <li><a href="{{ url('/admin/usuarios') }}" class="nav-link">Gestionar Usuarios</a></li>
         <li><a href="{{ url('/admin/publicaciones') }}" class="nav-link">Publicaciones</a></li>
         <li><a href="{{ url('/admin/postulaciones') }}" class="nav-link">Postulaciones</a></li>
-        <li><a href="{{ url('/admin/empleadores') }}" class="nav-link">Empleadores</a></li>
-        <li><a href="{{ url('/admin/empleados') }}" class="nav-link">Empleados</a></li>
-        <li><a href="{{ url('/admin/configuracion') }}" class="nav-link">Configuración</a></li>
+        <li><a href="{{ url('/admin/comentarios') }}" class="nav-link">Comentarios</a></li>
     </ul>
 </nav>
 
@@ -36,9 +33,9 @@
                         {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
-                        <li><a class="dropdown-item" href="{{ url('/admin/perfil') }}">Mi Perfil</a></li>
+                        {{-- <li><a class="dropdown-item" href="{{ url('/admin/perfil') }}">Mi Perfil</a></li>
                         <li><a class="dropdown-item" href="{{ url('/admin/configuracion') }}">Configuración</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li><hr class="dropdown-divider"></li> --}}
                         <li>
                             <form >
                                 @csrf

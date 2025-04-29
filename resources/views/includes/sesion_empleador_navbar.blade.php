@@ -25,6 +25,9 @@
                 <li class="nav-item">
                     <a href="{{ url('/postulantes') }}" class="nav-link text-dark">Postulantes</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ url('/mensajes') }}" class="nav-link text-dark">Mensajes</a>
+                </li>
             </ul>
 
             <!-- Perfil de empleador -->
@@ -35,9 +38,9 @@
                         {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="{{ url('/perfil_empleador') }}">Mi Perfil</a></li>
+                        {{-- <li><a class="dropdown-item" href="{{ url('/perfil_empleador') }}">Mi Perfil</a></li>
                         <li><a class="dropdown-item" href="{{ url('/configuracion_empleador') }}">Configuración</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li><hr class="dropdown-divider"></li> --}}
                         <li>
                             <form >
                                 @csrf

@@ -40,9 +40,9 @@
                         {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="{{ url('/perfil') }}">Mi Perfil</a></li>
+                        {{-- <li><a class="dropdown-item" href="{{ url('/perfil') }}">Mi Perfil</a></li>
                         <li><a class="dropdown-item" href="{{ url('/configuracion') }}">Configuración</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li><hr class="dropdown-divider"></li> --}}
                         <li>
                             <form >
                                 @csrf
