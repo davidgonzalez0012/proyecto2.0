@@ -99,7 +99,7 @@
                                                                 </option>
                                                                 <option value="empleador">Empleador</option>
                                                                 <option value="empleado">Empleado</option>
-                                                                {{-- <option value="administrador">administrador</option> --}}
+                                                                <option value="administrador">administrador</option>
                                                             </select>
                                                         </div>
                                                         <div class="mb-3">

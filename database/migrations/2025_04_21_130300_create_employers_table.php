@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
-            $table->string('empresa');
+            $table->string('empresa')->nullable();
             $table->text('descripcion')->nullable();
             $table->integer('reputacion')->default(0);
             $table->timestamps();
