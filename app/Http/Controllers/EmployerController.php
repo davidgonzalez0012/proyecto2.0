@@ -11,5 +11,5 @@ class EmployerController extends Controller
         return view('inicio_empleador');
     }
 
- 
+    
 }

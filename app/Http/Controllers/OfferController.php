@@ -4,42 +4,50 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Offer;
+use Illuminate\Support\Facades\Auth;
 class OfferController extends Controller
 {
-    
+
 
     public function publicar()
     {
         return view('publicar_empleo');
     }
 
-
-   
-
-    
     public function publicar_empleos(Request $request){
-        $publicar = new Offer();
-        $publicar -> titulo = $request -> titulo;
-        $publicar -> categoria = $request -> categoria;
-        $publicar -> contrato = $request -> contrato;
-        $publicar -> duracion = $request -> duracion;
-        $publicar -> salario = $request -> salario;
-        $publicar -> descripcion = $request -> descripcion;
-        $publicar -> educacion = $request -> educacion;
-        $publicar -> contacto = $request -> contacto;
-        $publicar -> ciudad = $request -> ciudad;
-        $publicar -> habilidades = $request -> habilidades;
-        $publicar -> experiencia = $request -> experiencia;
-        $publicar -> email = $request -> email;
-        $publicar -> modalidad = $request -> modalidad;
 
-    //
+        $offer = new Offer();
+        $offer ->  empleador_id = auth::user()->id;
+        $offer -> titulo = $request -> titulo;
+        $offer -> categoria = $request -> categoria;
+        $offer -> tipo_contrato = $request -> tipo_contrato;
+        $offer -> duracion_contrato = $request -> duracion_contrato;
+        $offer -> salario = $request -> salario;
+        $offer -> descripcion = $request -> descripcion;
+        $offer -> educacion = $request -> educacion;
+        $offer -> experiencia = $request -> experiencia;
+        $offer -> contacto_nombre = $request -> contacto_nombre;
+        $offer -> contacto_correo = $request -> contacto_correo;
+        $offer -> ciudad = $request -> ciudad;
+        $offer -> modalidad = $request -> modalidad;
+        $offer -> habilidades = $request -> habilidades;
 
-        $publicar -> estado = $request -> estado;
-        $publicar -> ubicacion = $request -> ubicacion;
+        $offer->save();
 
 
-        $publicar->save();
-        // return $publicar
+
+        return redirect()->route('empleador');
+
+    }
+
+
+    public function ver(){
+        return view('mis_publicaciones');
+    }
+
+    public function todas_publicaciones()
+    {
+        $ofertas = Offer::all();
+        return view('mis_publicaciones', compact('ofertas'));
     }
 }

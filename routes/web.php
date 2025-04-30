@@ -4,8 +4,6 @@
 
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Auth\RegistroController;
-use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Expr\PostDec;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -32,11 +30,22 @@ Route::middleware('auth')->group(function () {
     route::get('/inicio_empleador', [EmployerController::class, 'inicio_empleador'])->name('empleador');
     route::get('/inicio_empleado', [WorkerController::class, 'inicio_empleado'])->name('empleado');
     route::get('/inicio_administrador', [AdministratorController::class, 'inicio_administrador'])->name('administrador');
+
+
+    //trabajado patra administrador
+    route::get('/gestion', [AdministratorController::class, 'admin'])->name('gestion_users');
+    Route::get('/usuarios/{id}', [AdministratorController::class, 'show'])->name('usuarios.show');
+    Route::delete('/usuarios/{id}', [AdministratorController::class, 'destroy'])->name('usuarios.destroy');
+
+
+    route::get('/mis_publicaciones', [OfferController::class, 'ver'])->name('mis_publicaciones');
+
 });
 
 //salir
 route::get('logout', [LoginController::class, 'logout'])->name('logout');
-//
+
+route::post('/guardar_empleo', [OfferController::class, 'publicar_empleos'])->name('guardar_empleo');
 
 
 route::post('/iniciar', [LoginController::class, 'ingresar'])->name('iniciado');
