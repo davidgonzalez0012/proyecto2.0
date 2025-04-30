@@ -39,7 +39,10 @@ route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 route::post('/iniciar', [LoginController::class, 'ingresar'])->name('iniciado');
 Route::post('/registro', [RecordController::class, 'registrar'])->name('registro');
+route::post('/forgotpassword', [ForgottenPaswordController::class,'showLinkRequestForm'])->name('user.password.request');;
+route::post('/resetpassword', [ForgottenPaswordController::class,'sendResetLinkEmail'])->name('user.password.email');
 Route::post('/recuperar', [RecoverPasswordController::class, 'recuperar_contrasena'])->name('recuperacion');
 
-
+Route::get('/passwordreset/{token}', [RecoverPasswordController::class, 'showResetForm'])->name('user.password.reset');
+Route::post('/password/reset', [RecoverPasswordController::class, 'reset'])->name('user.password.update');
 
