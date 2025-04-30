@@ -8,6 +8,8 @@ use App\Http\Controllers\Auth\RegistroController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Expr\PostDec;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -39,10 +41,11 @@ route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 route::post('/iniciar', [LoginController::class, 'ingresar'])->name('iniciado');
 Route::post('/registro', [RecordController::class, 'registrar'])->name('registro');
-route::post('/forgotpassword', [ForgottenPaswordController::class,'showLinkRequestForm'])->name('user.password.request');;
-route::post('/resetpassword', [ForgottenPaswordController::class,'sendResetLinkEmail'])->name('user.password.email');
 Route::post('/recuperar', [RecoverPasswordController::class, 'recuperar_contrasena'])->name('recuperacion');
 
-Route::get('/passwordreset/{token}', [RecoverPasswordController::class, 'showResetForm'])->name('user.password.reset');
-Route::post('/password/reset', [RecoverPasswordController::class, 'reset'])->name('user.password.update');
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
