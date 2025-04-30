@@ -4,10 +4,7 @@
 
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Auth\RegistroController;
-use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
-use PhpParser\Node\Expr\PostDec;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,23 +28,33 @@ Route::middleware('auth')->group(function () {
     route::get('/inicio_empleado', [WorkerController::class, 'inicio_empleado'])->name('empleado');
     route::get('/inicio_administrador', [AdministratorController::class, 'inicio_administrador'])->name('administrador');
 
+
     //trabajado patra administrador
     route::get('/gestion', [AdministratorController::class, 'admin'])->name('gestion_users');
-Route::get('/usuarios/{id}', [AdministratorController::class, 'show'])->name('usuarios.show');
-Route::delete('/usuarios/{id}', [AdministratorController::class, 'destroy'])->name('usuarios.destroy');   
+    Route::get('/usuarios/{id}', [AdministratorController::class, 'show'])->name('usuarios.show');
+    Route::delete('/usuarios/{id}', [AdministratorController::class, 'destroy'])->name('usuarios.destroy');
+
+
+    route::get('/mis_publicaciones', [OfferController::class, 'ver'])->name('mis_publicaciones');
 
 });
 
 //salir
 route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
+route::post('/guardar_empleo', [OfferController::class, 'publicar_empleos'])->name('guardar_empleo');
+
 
 route::post('/iniciar', [LoginController::class, 'ingresar'])->name('iniciado');
 Route::post('/registro', [RecordController::class, 'registrar'])->name('registro');
+
+//
+
+//
 route::post('/forgotpassword', [ForgottenPaswordController::class,'showLinkRequestForm'])->name('user.password.request');;
 route::post('/resetpassword', [ForgottenPaswordController::class,'sendResetLinkEmail'])->name('user.password.email');
 Route::post('/recuperar', [RecoverPasswordController::class, 'recuperar_contrasena'])->name('recuperacion');
 
 Route::get('/passwordreset/{token}', [RecoverPasswordController::class, 'showResetForm'])->name('user.password.reset');
 Route::post('/password/reset', [RecoverPasswordController::class, 'reset'])->name('user.password.update');
-
+//

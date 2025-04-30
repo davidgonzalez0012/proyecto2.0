@@ -14,25 +14,20 @@ return new class extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('empleador_id')->constrained('employers')->onDelete('cascade');
+            $table->foreignId('empleador_id')->constrained('users')->onDelete('cascade');
             $table->string('titulo');
             $table->string('categoria');
-            $table->string('contrato');
-            $table->string('duracion');
-            $table->string('educacion');
-            $table->text('contacto');
-            $table->string('ciudad');
-            $table->text('habilidades');
-            $table->string('experiencia');
-            $table->string('email');
-            $table->string('modalidad');
-            $table->text('descripcion');
+            $table->string('tipo_contrato');
+            $table->string('duracion_contrato');
             $table->decimal('salario', 10, 2);
-
-            //falta agregar esto en la vista de publicar trabajo
-            $table->string('ubicacion');
-            $table->enum('estado', ['activa', 'cerrada'])->default('activa');
-
+            $table->text('descripcion');
+            $table->string('educacion');
+            $table->string('experiencia');
+            $table->string('contacto_nombre');
+            $table->string('contacto_correo');
+            $table->string('ciudad');
+            $table->string('modalidad');
+            $table->string('habilidades')->nullable();
             $table->timestamps();
         });
     }
